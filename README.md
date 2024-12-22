@@ -86,7 +86,7 @@ We welcome contributions to WikiChain! If you're interested in improving the pro
    ```bash
    git clone https://github.com/yourusername/WikiChain.git
 
-
-**© 2024 Dr. J. Chandra Priya and R. Nikil Sri Shen. All rights reserved. Unauthorized copying or distribution of this code, in any form, is strictly prohibited.**
-
 ---
+
+© 2024 **Dr. J. Chandra Priya** and **R. Nikil Sri Shen**. All rights reserved. 
+Unauthorized copying or distribution of this code, in any form, is strictly prohibited.
