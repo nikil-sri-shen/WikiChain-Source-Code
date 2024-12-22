@@ -1,9 +1,5 @@
 # **WikiChain: A Resilient and Pseudo-Transparent Knowledge Base**
 
-**© 2024 Dr. J. Chandra Priya and R. Nikil Sri Shen. All rights reserved. Unauthorized copying or distribution of this code, in any form, is strictly prohibited.**
-
----
-
 ## **Overview**
 
 **WikiChain** is a cutting-edge, robust, and highly scalable knowledge management system designed to provide a resilient and pseudo-transparent infrastructure for managing and sharing information. It leverages blockchain technology to create a decentralized and immutable database of knowledge that offers unprecedented reliability, security, and trustworthiness. Unlike traditional knowledge bases, WikiChain empowers users with transparent yet privacy-conscious methods for storing and accessing valuable data.
@@ -89,3 +85,8 @@ We welcome contributions to WikiChain! If you're interested in improving the pro
 2. **Clone Your Fork**:
    ```bash
    git clone https://github.com/yourusername/WikiChain.git
+
+
+**© 2024 Dr. J. Chandra Priya and R. Nikil Sri Shen. All rights reserved. Unauthorized copying or distribution of this code, in any form, is strictly prohibited.**
+
+---
