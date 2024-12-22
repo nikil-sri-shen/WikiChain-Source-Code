@@ -26,20 +26,23 @@
 To get started with WikiChain, follow these steps:
 
 1. **Clone the Repository**:
-    ```bash
-    git clone https://github.com/yourusername/WikiChain.git
-    cd WikiChain
-    ```
+
+   ```bash
+   git clone https://github.com/yourusername/WikiChain.git
+   cd WikiChain
+   ```
 
 2. **Install Dependencies**:
 
    - For the **client** (React frontend):
+
      ```bash
      cd client
      npm install
      ```
 
    - For the **server** (Node.js backend):
+
      ```bash
      cd server
      npm install
@@ -54,12 +57,14 @@ To get started with WikiChain, follow these steps:
 3. **Run the Application**:
 
    - Start the **client** (React):
+
      ```bash
      cd client
      npm start
      ```
 
    - Start the **server** (Node.js):
+
      ```bash
      cd server
      npm start
@@ -85,8 +90,11 @@ We welcome contributions to WikiChain! If you're interested in improving the pro
 2. **Clone Your Fork**:
    ```bash
    git clone https://github.com/yourusername/WikiChain.git
+   ```
 
 ---
 
-© 2024 **Dr. J. Chandra Priya** and **R. Nikil Sri Shen**. All rights reserved. 
-Unauthorized copying or distribution of this code, in any form, is strictly prohibited.
+© 2024 **Dr. J. Chandra Priya** and **R. Nikil Sri Shen**.
+
+- All rights reserved.
+- Unauthorized copying or distribution of this code, in any form, is strictly prohibited.
