@@ -92,22 +92,9 @@ We welcome contributions to WikiChain! If you're interested in improving the pro
    git clone https://github.com/nikil-sri-shen/WikiChain-Copyright.git
    ```
 
----
+## **Copyright**
 
 © 2024 **Dr. J. Chandra Priya** and **R. Nikil Sri Shen**.
 
 - All rights reserved.
 - Unauthorized copying or distribution of this code, in any form, is strictly prohibited.
-
-/\*\*
-
-- Copyright © 2024 Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
-- @file README.md
-- @description Overview and instructions for the WikiChain project
-- @authors
-- - Dr. J. Chandra Priya
-- - R. Nikil Sri Shen
-- @copyright 2024
-- @license All rights reserved. Unauthorized use, reproduction, or distribution of this code
--          is strictly prohibited without explicit permission from the authors.
-  \*/
