@@ -1,80 +1,89 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { FaSearch } from "react-icons/fa";
-import { IoMdCreate } from "react-icons/io";
-import web3 from "../../web3";
-import wikichain from "../../wikichain";
-import Loading from "../Loading.jsx";
-import ArticleTitle from "../articleTitle/ArticleTitle.jsx";
+/**
+ * Copyright © 2024 Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
+ * @file Update.jsx
+ * @description This component allows users to update articles by verifying their registration and checking article details.
+ *              Users can search for articles by title, update article content, and verify their status.
+ * @authors
+ *   - Dr. J. Chandra Priya
+ *   - R. Nikil Sri Shen
+ * @copyright 2024
+ * @license All rights reserved. Unauthorized use, reproduction, or distribution of this code
+ *          is strictly prohibited without explicit permission from the authors.
+ */
+
+import React, { useState, useEffect } from "react"; // Import necessary hooks from React
+import { FaSearch } from "react-icons/fa"; // Icon for search button
+import { IoMdCreate } from "react-icons/io"; // Icon for create/update button
+import web3 from "../../web3"; // Web3 instance to interact with blockchain
+import wikichain from "../../wikichain"; // WikiChain smart contract instance
+import Loading from "../Loading.jsx"; // Loading component to display loading state
+import ArticleTitle from "../articleTitle/ArticleTitle.jsx"; // Component to display article title
 
 function Update() {
-  const [title, setTitle] = useState("");
-  const [account, setAccount] = useState("");
-  const [query, setQuery] = useState("");
-  const [isQueried, setIsQuried] = useState(false);
-  const [isUserRegistered, setIsUserRegistered] = useState(false);
-  const [isVerified, setIsVerified] = useState(false);
-  const [author, setAuthor] = useState("");
-  const [cid, setCID] = useState("");
-  const [content, setContent] = useState("");
-  const [version, setVersion] = useState(100);
-  const [time, setTime] = useState("");
-  const [transactionStatus, setTransactionStatus] = useState("");
-  const [errorMsg, setErrorMessage] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
-  const [onUpdate, setOnUpdate] = useState(false);
-  const [user, setUser] = useState("");
+  // States to manage various values in the component
+  const [title, setTitle] = useState(""); // Article title input state
+  const [account, setAccount] = useState(""); // Ethereum account of the user
+  const [query, setQuery] = useState(""); // State to store the query result from the blockchain
+  const [isQueried, setIsQueried] = useState(false); // State to track if the article has been queried
+  const [isUserRegistered, setIsUserRegistered] = useState(false); // State to track if the user is registered
+  const [isVerified, setIsVerified] = useState(false); // State to track if the article is verified
+  const [author, setAuthor] = useState(""); // State to store article author
+  const [cid, setCID] = useState(""); // State to store the content identifier (CID)
+  const [content, setContent] = useState(""); // State to store the content of the article
+  const [version, setVersion] = useState(100); // State to store article version
+  const [time, setTime] = useState(""); // State to store the article's timestamp
+  const [transactionStatus, setTransactionStatus] = useState(""); // State to store transaction status
+  const [errorMsg, setErrorMessage] = useState(""); // State to store error messages
+  const [isLoading, setIsLoading] = useState(true); // State to track loading state
+  const [onUpdate, setOnUpdate] = useState(false); // State to track if the article is being updated
+  const [user, setUser] = useState(""); // State to store user data
 
+  // useEffect hook to check if the user is registered when the component mounts
   useEffect(() => {
     const checkUserRegistration = async () => {
-      const account = await web3.eth.getAccounts();
-      setAccount(account);
-      try {
-        // Assuming `wiki` is your contract instance
-        // console.log(account);
-        const user = await wikichain.methods.users(account[0]).call();
+      const account = await web3.eth.getAccounts(); // Get user's Ethereum account
+      setAccount(account); // Set account state
 
-        // Check if the user is registered based on your contract logic
-        const userIsRegistered = user && user.isRegistered;
-        // Update state accordingly
-        setUser(user);
-        setIsUserRegistered(userIsRegistered);
-        setIsLoading(false);
+      try {
+        const user = await wikichain.methods.users(account[0]).call(); // Get user details from the contract
+        const userIsRegistered = user && user.isRegistered; // Check if the user is registered
+        setUser(user); // Store user data
+        setIsUserRegistered(userIsRegistered); // Set registration status
+        setIsLoading(false); // Set loading state to false once data is fetched
       } catch (error) {
-        // Handle errors, e.g., log them or show an error message
-        console.error("Error checking user registration:", error);
-        setIsLoading(false);
+        console.error("Error checking user registration:", error); // Log any error
+        setIsLoading(false); // Set loading state to false if error occurs
       }
     };
 
-    // Call the function to check user registration
-    checkUserRegistration();
-  }, [account]);
+    checkUserRegistration(); // Call the function to check user registration
+  }, [account]); // Dependency on account to trigger this effect
 
+  // Handle article search based on the title entered by the user
   const handleSearch = async (e) => {
-    e.preventDefault();
-    const account = await web3.eth.getAccounts();
-    setAccount(account);
+    e.preventDefault(); // Prevent default form submission
+    const account = await web3.eth.getAccounts(); // Get the user's Ethereum account
+    setAccount(account); // Update account state
 
     try {
-      const user = await wikichain.methods.users(account[0]).call();
+      const user = await wikichain.methods.users(account[0]).call(); // Get user data from the contract
       if (user.isRegistered) {
-        // Call the queryArticle method with the entered title
+        // If the user is registered, proceed with querying the article
         const transaction = await wikichain.methods
-          .queryArticle(title, 100)
+          .queryArticle(title, 100) // Query article from the contract
           .call();
-        console.log(transaction);
-        setAuthor(transaction[0]); //author
-        setTitle(transaction[1]); //title
-        setCID(transaction[2]); //cid
-        setTime(transaction[3]); //timestamp
-        // setVote(transaction[4]); //votes
-        setIsVerified(transaction[5]); //isVerfied
-        setVersion(parseInt(transaction[6])); //versionNo
-        setQuery(transaction);
-        setIsQuried(true);
-        setErrorMessage("");
-        console.log(cid);
+        // Extract article details from the transaction
+        setAuthor(transaction[0]);
+        setTitle(transaction[1]);
+        setCID(transaction[2]);
+        setTime(transaction[3]);
+        setIsVerified(transaction[5]);
+        setVersion(parseInt(transaction[6]));
+        setQuery(transaction); // Store the full transaction data
+        setIsQueried(true); // Mark that the article has been queried
+        setErrorMessage(""); // Reset error message
+
+        // Fetch article content from backend using the CID
         const response = await fetch(
           `http://localhost:5000/retrieve/${transaction[2]}`
         );
@@ -83,30 +92,30 @@ function Update() {
           throw new Error("Network response was not ok");
         }
 
-        const textData = await response.text();
-        setContent(textData);
+        const textData = await response.text(); // Get the article content as text
+        setContent(textData); // Store the content
       } else {
-        setIsUserRegistered(!user.isRegistered);
+        setIsUserRegistered(!user.isRegistered); // Set registration status
       }
     } catch (error) {
-      // Handle errors, e.g., show an error message
+      // Handle errors during search
       if (error.message.includes("reverted")) {
-        setIsQuried(false);
-        setQuery("");
-        setErrorMessage("⚠️ Sorry, Article not found...!");
+        setIsQueried(false);
+        setQuery(""); // Reset query state
+        setErrorMessage("⚠️ Sorry, Article not found...!"); // Show error message
       } else {
-        // Handle other types of errors
         console.error(error);
-        setErrorMessage("An error occurred. Please try again.");
+        setErrorMessage("An error occurred. Please try again."); // Show general error message
       }
     }
   };
 
+  // Handle updating article content
   const handleUpdate = async () => {
     try {
-      console.log(cid);
-      console.log(content);
-      setOnUpdate(true);
+      setOnUpdate(true); // Set update state to true
+
+      // Send updated content to the backend for storage
       const response = await fetch("http://localhost:5000/store", {
         method: "POST",
         headers: {
@@ -119,68 +128,61 @@ function Update() {
         throw new Error("Network response was not ok");
       }
 
-      const id = await response.json();
-      setCID(id.cid);
-      console.log(id.cid);
-      console.log(cid);
-      // Call the updateArticle method
+      const id = await response.json(); // Get new CID from the backend response
+      setCID(id.cid); // Set new CID
+
+      // Update the article on the blockchain with the new content CID
       const updateTransaction = await wikichain.methods
         .updateArticle(title, id.cid)
         .send({ from: account[0], gas: 3000000 });
-      console.log(updateTransaction);
 
-      // Update local state to reflect that the article has been verified
+      // Query the updated article from the blockchain
       const transaction = await wikichain.methods
         .queryArticle(title, 100)
         .call();
-      setAuthor(transaction[0]); //author
-      setTitle(transaction[1]); //title
-      setCID(transaction[2]); //cid
-      setTime(transaction[3]); //timestamp
-      // setVote(transaction[4]); //votes
-      // setIsVerified(transaction[5]); //isVerfied
-      setVersion(parseInt(transaction[6])); //versionNo
+      setAuthor(transaction[0]);
+      setTitle(transaction[1]);
+      setCID(transaction[2]);
+      setTime(transaction[3]);
+      setVersion(parseInt(transaction[6]));
       setQuery(transaction);
-      setIsQuried(true);
-      setErrorMessage("");
+      setIsQueried(true); // Mark article as updated
+      setErrorMessage(""); // Reset error message
+
+      // Fetch the updated article content from backend
       const response2 = await fetch(
         `http://localhost:5000/retrieve/${transaction[2]}`
       );
 
-      if (!response.ok) {
+      if (!response2.ok) {
         throw new Error("Network response was not ok");
       }
 
-      const textData = await response2.text();
-      setContent(textData);
+      const textData = await response2.text(); // Get updated content
+      setContent(textData); // Store the updated content
 
-      // You can perform additional actions after a successful verification if needed
-      // console.log(transaction);
-      setOnUpdate(false);
-      setTransactionStatus("Updation successful!!!");
-      console.log("Update successful!");
+      setOnUpdate(false); // Set update state to false
+      setTransactionStatus("Updation successful!!!"); // Set success message
     } catch (error) {
-      // Handle errors, such as transaction rejection or failure
+      // Handle errors during update
       if (error.message.includes("reverted")) {
-        setIsQuried(false);
-        setQuery("");
-        setErrorMessage("⚠️ Sorry, An error occured in updation...!");
+        setIsQueried(false);
+        setQuery(""); // Reset query state
+        setErrorMessage("⚠️ Sorry, An error occurred in updation...!"); // Show error message
       } else {
-        // Handle other types of errors
         console.error(error);
-        setErrorMessage("An error occurred. Please try again.");
+        setErrorMessage("An error occurred. Please try again."); // Show general error message
       }
-      console.error("Error verifying article:", error.message);
     }
-    console.log("Updated...");
   };
+
   return (
     <div>
       {isLoading ? (
-        <Loading></Loading>
+        <Loading /> // Display loading component while data is being fetched
       ) : (
         <div>
-          <ArticleTitle />
+          <ArticleTitle /> {/* Display article title */}
           <form onSubmit={handleSearch}>
             <div className="text-center p-20">
               {isUserRegistered ? (
@@ -191,79 +193,47 @@ function Update() {
                   <label className="text-3xl text-primary font-bold">
                     Title
                   </label>
-                  <br></br>
-                  <br></br>
+                  <br />
                   <input
                     type="text"
                     value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    className="text-black  text-3xl  border border-gray-700 rounded-md focus:outline-none focus:border-blue-500"
+                    onChange={(e) => setTitle(e.target.value)} // Handle title input change
+                    className="text-black text-3xl border border-gray-700 rounded-md"
                     placeholder="enter the title"
                   />
-                  <br></br>
                   <button
                     type="submit"
                     className="m-5 bg-black hover:bg-primary text-white font-bold py-2 px-4 rounded-md"
                   >
-                    <span className="flex">
-                      <FaSearch size={24} className="mr-2" />
-                      Search
-                    </span>
+                    <FaSearch size={24} className="mr-2" />
+                    Search
                   </button>
                   {isQueried ? (
                     <div>
                       {isVerified || user.isConsortiumMember ? (
-                        <div>
-                          <div>
-                            <div className="bg-white text-black border-t-2 border-b-2 border-x-2 border-gray-600 m-10 rounded-md">
-                              <span className="text-5xl text-primary font-bold">
-                                {query[1]}
-                              </span>
-                              <br />
-                              <div className="flex flex-col justify-between m-2">
-                                <div className="flex justify-between">
-                                  <span className="text-sm font-bold">
-                                    <a href="/">WikiChain.org</a>
-                                  </span>
-                                  <span className="text-sm">
-                                    Published by: {author.slice(0, 12)}...
-                                  </span>
-                                </div>
-                                <div className="flex justify-between mt-2">
-                                  <span className="text-sm">
-                                    Timestamp: {time}
-                                  </span>
-                                  <span className="text-sm">
-                                    Version: {version}
-                                  </span>
-                                </div>
-                              </div>
-                              <hr className="bg-black border-t-2 border-gray-600"></hr>
-                            </div>
-                            {onUpdate ? (
-                              <div>Article is being updated...Please Wait!</div>
-                            ) : (
-                              <div className="text-3xl m-6 overflow-hidden whitespace-pre-wrap">
-                                <textarea
-                                  value={content}
-                                  onChange={(e) => setContent(e.target.value)}
-                                  className="text-black border border-gray-700 rounded-md focus:outline-none focus:border-blue-500 text-3xl w-full"
-                                  rows={15}
-                                  placeholder="enter the content"
-                                >
-                                  {content}
-                                </textarea>
-                                <div className="flex items-center justify-between m-10">
-                                  <button
-                                    onClick={handleUpdate}
-                                    className="bg-black hover:bg-primary text-white font-bold py-2 px-4 rounded-md flex items-center text-base mx-auto"
-                                  >
-                                    <IoMdCreate size={24} className="mr-2" />
-                                    Update
-                                  </button>
-                                </div>
-                              </div>
-                            )}
+                        <div className="bg-white text-black border-t-2 border-b-2 border-x-2 border-gray-600 m-10 rounded-md">
+                          <span className="text-5xl text-primary font-bold">
+                            {query[1]}
+                          </span>
+                          <div className="flex justify-between mt-2">
+                            <span className="text-sm">Timestamp: {time}</span>
+                            <span className="text-sm">Version: {version}</span>
+                          </div>
+                          <div className="text-3xl m-6 overflow-hidden">
+                            <textarea
+                              value={content}
+                              onChange={(e) => setContent(e.target.value)} // Handle content input change
+                              className="text-black text-3xl w-full"
+                              rows={15}
+                              placeholder="Enter the content"
+                            />
+                            <button
+                              onClick={handleUpdate} // Trigger handleUpdate function on click
+                              className="bg-black hover:bg-primary text-white font-bold py-2 px-4 rounded-md flex items-center"
+                            >
+                              <IoMdCreate size={24} className="mr-2" />
+                              Update
+                            </button>
                           </div>
                         </div>
                       ) : (
@@ -272,20 +242,16 @@ function Update() {
                         </div>
                       )}
                     </div>
-                  ) : (
-                    <div></div>
-                  )}
+                  ) : null}
                 </div>
               ) : (
-                <div className="py-48 text-center justify-center hover:shadow-4xl">
+                <div className="py-48 text-center">
                   <p className="text-primary text-5xl">
                     ⚠️ You are not a registered User!!!
                   </p>
-                  <br></br>
                   <p className="text-3xl text-quaternary">
                     Please Register here 👇🏼:
                   </p>
-                  <br></br>
                   <a href="/registration" className="text-3xl text-quaternary">
                     Click Here
                   </a>

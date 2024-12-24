@@ -1,3 +1,14 @@
+/**
+ * Copyright © 2024 Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
+ * @file WikiChain.test.js
+ * @description Test file for WikiChain smart contract to verify functionality like user registration, article publishing, querying, voting, etc.
+ * @authors
+ *   - Dr. J. Chandra Priya
+ *   - R. Nikil Sri Shen
+ * @copyright 2024
+ * @license All rights reserved. Unauthorized use, reproduction, or distribution of this code
+ *          is strictly prohibited without explicit permission from the authors.
+ */
 const { assert } = require("chai");
 const ganache = require("ganache-cli");
 const Web3 = require("web3");
@@ -707,13 +718,13 @@ describe("WikiChain", () => {
       .queryArticle("New Article", 0)
       .call({ from: accounts[1] });
     console.log(output);
-    // // If the above line does not throw an error, the test should fail
-    // assert.fail("Expected an error but got none");
-    // // Check if the error message matches the expected message
-    // assert.include(
-    //   error.message,
-    //   "Article not found",
-    //   "Unexpected error message"
-    // );
+    // Check if the error message matches the expected message
+    assert.include(
+      error.message,
+      "Article not found",
+      "Unexpected error message"
+    );
+    // If the above line does not throw an error, the test should fail
+    assert.fail("Expected an error but got none");
   });
 });

@@ -1,4 +1,5 @@
 /**
+ *  * Copyright © 2024 Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
  * @file Error.jsx
  * @description Source code for the Error component of the WikiChain application.
  * @authors

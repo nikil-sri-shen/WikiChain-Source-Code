@@ -1,70 +1,82 @@
+/**
+ * Copyright © 2024 Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
+ * @file .gitignore
+ * @description This file specifies files and directories that should be ignored by Git when pushing or committing to a repository.
+ *              It includes configurations for ignoring build files, dependencies, logs, and environment configurations.
+ * @authors
+ *   - Dr. J. Chandra Priya
+ *   - R. Nikil Sri Shen
+ * @copyright 2024
+ * @license All rights reserved. Unauthorized use, reproduction, or distribution of this code
+ *          is strictly prohibited without explicit permission from the authors.
+ */
+
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-#blockstore
-/blockstore
+# Blockstore
+/blockstore  # Ignoring blockstore directory
 
-#smart contracts output file
-/smart_contracts/output.txt
+# Smart contracts output file
+/smart_contracts/output.txt  # Ignoring output file of the smart contract directory
 
-# dependencies
-/node_modules
-client/node_modules
-server/node_modules
-smart_contracts/node_modules
-/.pnp
-client/.pnp
-server/.pnp
-smart_contracts/.pnp
-/.pnp.js
-client/.pnp.js
-server/.pnp.js
-smart_contracts/.pnp.js
+# Dependencies
+/node_modules  # Ignoring node_modules directory for the main project
+client/node_modules  # Ignoring node_modules directory for the client
+server/node_modules  # Ignoring node_modules directory for the server
+smart_contracts/node_modules  # Ignoring node_modules directory for the smart contracts
+/.pnp  # Ignoring PnP configuration file for the main project
+client/.pnp  # Ignoring PnP configuration file for the client
+server/.pnp  # Ignoring PnP configuration file for the server
+smart_contracts/.pnp  # Ignoring PnP configuration file for the smart contracts
+/.pnp.js  # Ignoring PnP JavaScript configuration file for the main project
+client/.pnp.js  # Ignoring PnP JavaScript configuration file for the client
+server/.pnp.js  # Ignoring PnP JavaScript configuration file for the server
+smart_contracts/.pnp.js  # Ignoring PnP JavaScript configuration file for the smart contracts
 
+# Testing
+/coverage  # Ignoring coverage directory for the main project
+client/coverage  # Ignoring coverage directory for the client
+server/coverage  # Ignoring coverage directory for the server
+smart_contracts/coverage  # Ignoring coverage directory for the smart contracts
 
-# testing
-/coverage
-client/coverage
-server/coverage
-smart_contracts/coverage
+# Production
+/build  # Ignoring build directory for the main project
+client/build  # Ignoring build directory for the client
+server/build  # Ignoring build directory for the server
+smart_contracts/build  # Ignoring build directory for the smart contracts
 
-# production
-/build
-client/build
-server/build
-smart_contracts/build
+# Miscellaneous
+/.DS_Store  # Ignoring macOS system file
+client/.DS_Store  # Ignoring macOS system file for the client
+server/.DS_Store  # Ignoring macOS system file for the server
+smart_contracts/.DS_Store  # Ignoring macOS system file for the smart contracts
+/.env.local  # Ignoring local environment configuration file for the main project
+client/.env.local  # Ignoring local environment configuration file for the client
+server/.env.local  # Ignoring local environment configuration file for the server
+smart_contracts/.env.local  # Ignoring local environment configuration file for the smart contracts
+/.env.development.local  # Ignoring development-specific environment configuration file for the main project
+client/.env.development.local  # Ignoring development-specific environment configuration file for the client
+server/.env.development.local  # Ignoring development-specific environment configuration file for the server
+smart_contracts/.env.development.local  # Ignoring development-specific environment configuration file for the smart contracts
+/.env.test.local  # Ignoring test-specific environment configuration file for the main project
+client/.env.test.local  # Ignoring test-specific environment configuration file for the client
+server/.env.test.local  # Ignoring test-specific environment configuration file for the server
+smart_contracts/.env.test.local  # Ignoring test-specific environment configuration file for the smart contracts
+/.env.production.local  # Ignoring production-specific environment configuration file for the main project
+client/.env.production.local  # Ignoring production-specific environment configuration file for the client
+server/.env.production.local  # Ignoring production-specific environment configuration file for the server
+smart_contracts/.env.production.local  # Ignoring production-specific environment configuration file for the smart contracts
 
-# misc
-/.DS_Store
-client/.DS_Store
-server/.DS_Store
-smart_contracts/.DS_Store
-/.env.local
-client/.env.local
-server/.env.local
-smart_contracts/.env.local
-/.env.development.local
-client/.env.development.local
-server/.env.development.local
-smart_contracts/.env.development.local
-/.env.test.local
-client/.env.test.local
-server/.env.test.local
-smart_contracts/.env.test.local
-/.env.production.local
-client/.env.production.local
-server/.env.production.local
-smart_contracts/.env.production.local
-
-/npm-debug.log*
-client/npm-debug.log*
-server/npm-debug.log*
-smart_contracts/npm-debug.log*
-/yarn-debug.log*
-client/yarn-debug.log*
-server/yarn-debug.log*
-smart_contracts/yarn-debug.log*
-/yarn-error.log*
-client/yarn-error.log*
-server/yarn-error.log*
-smart_contracts/yarn-error.log*
-
+# Debug logs
+/npm-debug.log*  # Ignoring npm debug logs for the main project
+client/npm-debug.log*  # Ignoring npm debug logs for the client
+server/npm-debug.log*  # Ignoring npm debug logs for the server
+smart_contracts/npm-debug.log*  # Ignoring npm debug logs for the smart contracts
+/yarn-debug.log*  # Ignoring yarn debug logs for the main project
+client/yarn-debug.log*  # Ignoring yarn debug logs for the client
+server/yarn-debug.log*  # Ignoring yarn debug logs for the server
+smart_contracts/yarn-debug.log*  # Ignoring yarn debug logs for the smart contracts
+/yarn-error.log*  # Ignoring yarn error logs for the main project
+client/yarn-error.log*  # Ignoring yarn error logs for the client
+server/yarn-error.log*  # Ignoring yarn error logs for the server
+smart_contracts/yarn-error.log*  # Ignoring yarn error logs for the smart contracts

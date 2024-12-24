@@ -1,4 +1,5 @@
 /**
+ *  * Copyright © 2024 Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
  * @file Loading.jsx
  * @description Source code for the Loading component of the WikiChain application.
  * @authors

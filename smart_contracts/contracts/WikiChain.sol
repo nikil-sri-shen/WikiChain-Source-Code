@@ -1,4 +1,16 @@
 // SPDX-License-Identifier: MIT
+/**
+ * Copyright © 2024 Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
+ * @file WikiChain.sol
+ * @description This contract allows users to register, publish, update, vote on, verify, and query articles. It also includes functionalities for managing consortium members, performance scores, and the deletion of articles.
+ * @authors
+ *   - Dr. J. Chandra Priya
+ *   - R. Nikil Sri Shen
+ * @copyright 2024
+ * @license All rights reserved. Unauthorized use, reproduction, or distribution of this code
+ *          is strictly prohibited without explicit permission from the authors.
+ */
+
 pragma solidity ^0.8.0;
 
 contract WikiChain {
