@@ -3,6 +3,9 @@
 #blockstore
 /blockstore
 
+#smart contracts output file
+/smart_contracts/output.txt
+
 # dependencies
 /node_modules
 client/node_modules
