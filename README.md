@@ -92,6 +92,18 @@ We welcome contributions to WikiChain! If you're interested in improving the pro
    git clone https://github.com/nikil-sri-shen/WikiChain.git
    ```
 
+## **Contact**
+**Dr. J. Chandra Priya**,
+Assistant Professor,
+Department of Computer Science and Engineering,
+Mepco Schlenk Engineering College.
+
+**R. Nikil Sri Shen**,
+Software Engineer,
+Cisco System (India) Pvt. Ltd.
+
+E-Mail:**nikilsrishen@gmail.com**
+
 ## **Copyright**
 
 © 2024 **Dr. J. Chandra Priya** and **R. Nikil Sri Shen**.
