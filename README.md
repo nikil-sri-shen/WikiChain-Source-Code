@@ -28,7 +28,7 @@ To get started with WikiChain, follow these steps:
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/nikil-sri-shen/WikiChain-Copyright.git
+   git clone https://github.com/nikil-sri-shen/WikiChain.git
    cd WikiChain
    ```
 
@@ -89,7 +89,7 @@ We welcome contributions to WikiChain! If you're interested in improving the pro
 1. **Fork the Repository**: Click the 'Fork' button on GitHub to create your own copy of the project.
 2. **Clone Your Fork**:
    ```bash
-   git clone https://github.com/nikil-sri-shen/WikiChain-Copyright.git
+   git clone https://github.com/nikil-sri-shen/WikiChain.git
    ```
 
 ## **Copyright**
