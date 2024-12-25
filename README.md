@@ -93,14 +93,14 @@ We welcome contributions to WikiChain! If you're interested in improving the pro
    ```
 
 ## **Contact**
-**Dr. J. Chandra Priya**,
-Assistant Professor,
-Department of Computer Science and Engineering,
-Mepco Schlenk Engineering College.
+**Dr. J. Chandra Priya**,  
+Assistant Professor,  
+Department of Computer Science and Engineering,  
+Mepco Schlenk Engineering College.  
 
-**R. Nikil Sri Shen**,
-Software Engineer,
-Cisco System (India) Pvt. Ltd.
+**R. Nikil Sri Shen**,  
+Software Engineer,  
+Cisco System (India) Pvt. Ltd.  
 
 E-Mail:**nikilsrishen@gmail.com**
 
