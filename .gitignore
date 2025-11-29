@@ -1,12 +1,12 @@
 /**
- * Copyright © 2024 Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
+ * Copyright © 2024-Present Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
  * @file .gitignore
  * @description This file specifies files and directories that should be ignored by Git when pushing or committing to a repository.
  *              It includes configurations for ignoring build files, dependencies, logs, and environment configurations.
  * @authors
  *   - Dr. J. Chandra Priya
  *   - R. Nikil Sri Shen
- * @copyright 2024
+ * @copyright 2024-Present
  * @license All rights reserved. Unauthorized use, reproduction, or distribution of this code
  *          is strictly prohibited without explicit permission from the authors.
  */

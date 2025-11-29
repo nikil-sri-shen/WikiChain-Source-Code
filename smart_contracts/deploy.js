@@ -1,5 +1,5 @@
 /**
- * Copyright © 2024 Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
+ * Copyright © 2024-Present Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
  * @file deploy.js
  * @description This script is used to deploy the compiled contract to a blockchain network using Web3.js and HDWalletProvider.
  *              It connects to the network, gets accounts, and deploys the contract using the ABI and bytecode obtained from
@@ -7,7 +7,7 @@
  * @authors
  *   - Dr. J. Chandra Priya
  *   - R. Nikil Sri Shen
- * @copyright 2024
+ * @copyright 2024-Present
  * @license All rights reserved. Unauthorized use, reproduction, or distribution of this code
  *          is strictly prohibited without explicit permission from the authors.
  */

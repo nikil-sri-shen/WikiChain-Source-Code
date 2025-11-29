@@ -1,12 +1,12 @@
 /**
- * Copyright © 2024 Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
+ * Copyright © 2024-Present Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
  * @file index.js
  * @description The entry point for the React application. This file imports global styles, the main App component,
  *              and renders the application to the root DOM element.
  * @authors
  *   - Dr. J. Chandra Priya
  *   - R. Nikil Sri Shen
- * @copyright 2024
+ * @copyright 2024-Present
  * @license All rights reserved. Unauthorized use, reproduction, or distribution of this code
  *          is strictly prohibited without explicit permission from the authors.
  */

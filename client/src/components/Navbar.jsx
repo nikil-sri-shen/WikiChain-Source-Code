@@ -1,11 +1,11 @@
 /**
- *  * Copyright © 2024 Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
+ *  * Copyright © 2024-Present Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
  * @file Navbar.jsx
  * @description Source code for the Navbar component of the WikiChain application.
  * @authors
  *   - Dr. J. Chandra Priya
  *   - R. Nikil Sri Shen
- * @copyright 2024
+ * @copyright 2024-Present
  * @license All rights reserved. Unauthorized use, reproduction, or distribution of this code
  *          is strictly prohibited without explicit permission from the authors.
  */

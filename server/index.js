@@ -1,12 +1,12 @@
 /**
- * Copyright © 2024 Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
+ * Copyright © 2024-Present Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
  * @file index.js
  * @description This file contains the server-side logic for the WikiChain project.
  *              It exposes endpoints for storing, retrieving, and checking the availability of content using Helia and IPFS.
  * @authors
  *   - Dr. J. Chandra Priya
  *   - R. Nikil Sri Shen
- * @copyright 2024
+ * @copyright 2024-Present
  * @license All rights reserved. Unauthorized use, reproduction, or distribution of this code
  *          is strictly prohibited without explicit permission from the authors.
  */

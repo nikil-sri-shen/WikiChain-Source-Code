@@ -1,5 +1,5 @@
 /**
- * Copyright © 2024 Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
+ * Copyright © 2024-Present Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
  * @file Registration.jsx
  * @description This component allows users to register themselves on the platform by verifying their registration status
  *              and handling the transaction on the blockchain. It manages the user registration process by interacting with
@@ -7,7 +7,7 @@
  * @authors
  *   - Dr. J. Chandra Priya
  *   - R. Nikil Sri Shen
- * @copyright 2024
+ * @copyright 2024-Present
  * @license All rights reserved. Unauthorized use, reproduction, or distribution of this code
  *          is strictly prohibited without explicit permission from the authors.
  */

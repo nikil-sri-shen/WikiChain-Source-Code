@@ -1,5 +1,5 @@
 /**
- * Copyright © 2024 Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
+ * Copyright © 2024-Present Dr.J.Chandra Priya and R. Nikil Sri Shen. All Rights Reserved.
  * @file wikichain.js
  * @description This file sets up and exports an Ethereum smart contract instance using Web3.js.
  *              It initializes the contract with the specified ABI and contract address to interact with.
@@ -8,7 +8,7 @@
  * @authors
  *   - Dr. J. Chandra Priya
  *   - R. Nikil Sri Shen
- * @copyright 2024
+ * @copyright 2024-Present
  * @license All rights reserved. Unauthorized use, reproduction, or distribution of this code
  *          is strictly prohibited without explicit permission from the authors.
  */
@@ -16,7 +16,7 @@
 import web3 from "./web3"; // Import the Web3 instance to interact with the Ethereum blockchain
 
 // Contract address deployed on the Ethereum network
-const address = "Change to your contract address";
+const address = "0xd7B7B0556AE46a2633E814c8Ebc9986Da6b8a239";
 
 // ABI (Application Binary Interface) of the smart contract
 const abi = [
