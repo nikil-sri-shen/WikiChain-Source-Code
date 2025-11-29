@@ -95,9 +95,8 @@ We welcome contributions to WikiChain! If you're interested in improving the pro
 ## **Contact**
 
 **Dr. J. Chandra Priya**,  
-Associate Professor,  
-Department of Computer Science and Engineering,  
-AAA Engineering College.
+Independent Reseacher,
+Virudhunagar.
 
 **R. Nikil Sri Shen**,  
 Independent Reseacher,
